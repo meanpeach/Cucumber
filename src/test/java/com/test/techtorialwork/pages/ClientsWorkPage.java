@@ -134,9 +134,9 @@ public class ClientsWorkPage {
         List <Integer> expectedIDs = new ArrayList<>(actualIDs);
         Collections.sort(expectedIDs);
 
-        for(int i =0;i< actualIDs.size();i++){
-            Assert.assertEquals(actualIDs.get(i),expectedIDs.get(i));
-        }
+
+            Assert.assertEquals(actualIDs,expectedIDs);
+
 
 
 
