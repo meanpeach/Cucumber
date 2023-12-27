@@ -19,12 +19,12 @@ public class ClientsStepDef {
     public void user_clicks_clients_button() {
         mainWorkPage.clickClientsBtn();
     }
-    @When("User clicks Add client and provides {string}, {string}, {string},{string} for ClientPage")
+    @When("User clicks add client and provides {string}, {string},{string},{string} for ClientPage")
     public void user_clicks_add_client_and_provides_for_client_page(String name, String email, String country, String mobile) throws InterruptedException {
         clientsWorkPage.clientInformation(name,email,country,mobile);
 
     }
-    @When("User provides company information {string}, {string},{string}")
+    @When("User provides company information {string},{string},{string}")
     public void user_provides_company_information(String companyName, String companyWebsite, String officePhone) throws InterruptedException {
         clientsWorkPage.companyInformation(companyName,companyWebsite,officePhone);
 
