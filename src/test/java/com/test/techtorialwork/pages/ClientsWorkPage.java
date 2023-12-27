@@ -60,7 +60,7 @@ public class ClientsWorkPage {
 
     public void clientInformation(String name,String email,String country,String mobile) throws InterruptedException {
         addClientButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         this.name.sendKeys(name);
         this.email.sendKeys(email);
         BrowserUtils.selectBy(this.country,country,"text");
