@@ -2,11 +2,15 @@ package com.test.techtorialwork.stepdefinitions;
 
 import com.test.techtorialwork.pages.ClientsWorkPage;
 import com.test.techtorialwork.pages.MainWorkPage;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import utils.DriverHelper;
+
+import java.util.List;
+import java.util.Map;
 
 public class ClientsStepDef {
 
@@ -83,6 +87,41 @@ public class ClientsStepDef {
     public void user_validates_that_all_the_i_ds_are_listed_in_ascending_order() throws InterruptedException {
         clientsWorkPage.ascendingOrderValidation();
 
+
+    }
+
+    @When("User clicks add client and provides personal information")
+    public void user_clicks_add_client_and_provides_personal_information(DataTable dataTable) throws InterruptedException {
+        Map<String,String> allPersonalInformation=dataTable.asMap();
+        clientsWorkPage.clientInformation(allPersonalInformation.get("name"),
+                                            allPersonalInformation.get("email"),
+                                            allPersonalInformation.get("country"),
+                                            allPersonalInformation.get("mobile"));
+    }
+
+    @When("User provides company information")
+    public void user_provides_company_information(DataTable dataTable) throws InterruptedException {
+        Map<String,String> allCompanyInformation=dataTable.asMap();
+        clientsWorkPage.companyInformation(allCompanyInformation.get("companyName"),
+                allCompanyInformation.get("companyWebsite"),
+                allCompanyInformation.get("companyPhone"));
+
+    }
+    @When("User provides address information")
+    public void user_provides_address_information(DataTable dataTable) throws InterruptedException {
+        List<String>allAddressInformation = dataTable.asList();
+        clientsWorkPage.addressInformation(allAddressInformation.get(0),
+               allAddressInformation.get(1) );
+
+
+    }
+    @Then("User clicks save button and validates information")
+    public void user_clicks_save_button_and_validates_information(DataTable dataTable) throws InterruptedException {
+        List<String> allClientInformation = dataTable.asList();
+        clientsWorkPage.saveAndValidate(allClientInformation.get(0),
+                allClientInformation.get(1),
+                allClientInformation.get(2),
+                allClientInformation.get(3));
 
     }
 

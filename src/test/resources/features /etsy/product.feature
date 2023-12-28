@@ -22,3 +22,4 @@ Feature: Testing the Search Product Functionality
 #  Scenario: Search Functionality Happy Path for Etsy Hat
 #    When User searches 'Pin' for Etsy
 #    Then User validates the title 'Pin - Etsy' from Etsy
+

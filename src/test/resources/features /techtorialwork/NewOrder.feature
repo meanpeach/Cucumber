@@ -30,7 +30,7 @@ Feature: Testing New Order Functionality
     And User selects product 'Mid-Size Wheeled Paver'
     When User inputs Client Note 'New product for the Wilson. The delivery date should be before January.'
     And User clicks Submit button
-    Then User validates the order is for 'David Wilson' with '$257,400.00' on '26-12-2023' status is 'Pending'
+    Then User validates the order is for 'David Wilson' with '$257,400.00' on '27-12-2023' status is 'Pending'
 
 
 #  TC 9     Validate new order page

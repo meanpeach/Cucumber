@@ -12,7 +12,7 @@ public class WorkHook {
 
     public WebDriver driver;
 
-  /* @Before //
+  @Before //
 
         public void setup(){
             driver= DriverHelper.getDriver();
@@ -25,7 +25,7 @@ public class WorkHook {
       driver.quit();
     }
 
-   */
+
 
 
     }
